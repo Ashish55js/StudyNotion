@@ -56,18 +56,18 @@ const InstructorChart = ({courses}) => {
     <div>
       <p className='text-center font-bold text-2xl'>Visualization Of Data</p>
       <div className='flex gap-x-5'>
-        <button className={`${!isActive ? 'text-white bg-yellow-200' : 'border-yellow-50'} flex items-center border border-yellow-50 cursor-pointer gap-x-2 rounded-md py-2 px-5 font-semibold`}
+        <button className={`${!isActive ? 'bg-yellow-100' : 'border-yellow-100'} flex items-center border-2 border-yellow-50 rounded-xl cursor-pointer gap-x-2 rounded-md py-2 px-5 font-semibold`}
         onClick={() => {setIsActive(!isActive); setCurrChart("students")}}>
             Student
         </button>
 
-        <button className={`${isActive ? 'text-yellow bg-yellow-200' : 'border-yellow-50'} flex items-center border border-yellow-50 cursor-pointer gap-x-2 rounded-md py-2 px-5 font-semibold `}
+        <button className={`${isActive ? 'text-yellow bg-yellow-100' : 'border-yellow-100'} flex items-center border-2 rounded-xl border-yellow-100 cursor-pointer gap-x-2 rounded-md py-2 px-5 font-semibold `}
         onClick={() => {setIsActive(!isActive); setCurrChart("income")}}
         >
             Income
         </button>
       </div>
-      <div className="w-8/12 h-8/12 mx-48 px-32 my-4">
+      <div className="w-8/12 h-8/12 mx-48 px-32 my-4 flex">
         <Pie 
             data={currChart === "students" ? chartDataForStudents : chartDataForIncome}
             options={options}

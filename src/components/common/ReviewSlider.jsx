@@ -34,7 +34,7 @@ const ReviewSlider = () => {
 
 
   return (
-    <div className='text-white'>
+    <div className='text-richblack-600 mt-4'>
         <div className='h-[190px] max-w-maxContent'>
             <Swiper
             slidesPerView={4}

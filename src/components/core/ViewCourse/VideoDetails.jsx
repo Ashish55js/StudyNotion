@@ -159,13 +159,13 @@ const VideoDetails = () => {
 
   }
   return (
-    <div className='mx-8 my-12'>
+    <div className='w-[72%] float-right'>
       {
         !videoData ? (<div>
                         No Data Found
                     </div>)
         : (
-            <Player
+            <Player 
                 ref = {playerRef}
                 aspectRatio="16:9"
                 playsInline

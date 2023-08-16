@@ -44,11 +44,11 @@ export default function AddNewCategory() {
     
     return (
     <div>
-        <div className="space-y-10 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-6">
-          <p className="text-2xl font-semibold text-richblack-5">Add Category</p>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <div className="space-y-10 rounded-md border-[1px] border-richblack-700 p-6">
+          <p className="text-2xl font-bold text-richblack-600">Add Category</p>
+          <form onSubmit={handleSubmit(onSubmit)} className="text-richblack-600 space-y-4">
             <div className="flex flex-col space-y-2">
-              <label className="text-sm text-richblack-5" htmlFor="categoryName">
+              <label htmlFor="categoryName">
                 Category Name <sup className="text-pink-200">*</sup>
               </label>
               <input
@@ -56,7 +56,7 @@ export default function AddNewCategory() {
                 disabled={loading}
                 placeholder="Add a Category Name"
                 {...register("categoryName", { required: true })}
-                className="form-style w-full"
+                className="form-style border-2 border-richblack-200 bg-white text-richblack-600 w-full"
               />
               {errors.categoryName && (
                     <span className="ml-2 text-xs tracking-wide text-pink-200">
@@ -65,7 +65,7 @@ export default function AddNewCategory() {
                 )}
             </div>
             <div className="flex flex-col space-y-2">
-              <label className="text-sm text-richblack-5" htmlFor="categoryDescription">
+              <label htmlFor="categoryDescription">
                 Category Description <sup className="text-pink-200">*</sup>
               </label>
               <input
@@ -73,7 +73,7 @@ export default function AddNewCategory() {
                 disabled={loading}
                 placeholder="Add a Category Description"
                 {...register("categoryDescription", { required: true })}
-                className="form-style w-full"
+                className="form-style border-2 border-richblack-200 bg-white text-richblack-600 w-full"
               />
               {errors.categoryDescription && (
                     <span className="ml-2 text-xs tracking-wide text-pink-200">

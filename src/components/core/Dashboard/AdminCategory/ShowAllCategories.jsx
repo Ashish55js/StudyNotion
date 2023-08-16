@@ -44,17 +44,17 @@ export default function ShowAllCategories() {
 
 
   return (
-    <div className="">
-        <p className="text-2xl mb-8 font-semibold text-yellow-50 text-center">All Categories</p>
+    <div className="border border-yellow-100 rounded-xl p-4">
+        <p className="text-2xl mb-8 font-semibold text-yellow-100 text-center">All Categories</p>
         {
           loading ? (<button type="button" className="bg-indigo-500 ..." disabled>
           <svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
           </svg>
           Processing...
         </button>) : (
-        <div className=''>
+        <div className='p-4'>
           <Table>
-            <Thead className='text-center text-yellow-300'>
+            <Thead className='text-center text-yellow-200'>
                 <Tr className="border-b-richblack-800">
                   <Th className="text-left text-lg font-bold uppercase">
                     Category Name
@@ -68,11 +68,11 @@ export default function ShowAllCategories() {
                 </Tr>
           </Thead>
 
-          <Tbody className='mt-6 px-4'>
+          <Tbody className='mt-4'>
             {
             allCategories?.length === 0 ? (
               <Tr>
-                <Td className="py-10 px-12 text-center text-2xl font-medium text-richblack-100">
+                <Td className="py-10 px-12 text-center text-2xl font-medium text-richblack-600">
                   No Categories found
                 </Td>
               </Tr>
@@ -81,20 +81,20 @@ export default function ShowAllCategories() {
               allCategories?.map((category, index) => (
                 <Tr
                   key={index}
-                  className=" border-b border-richblack-800"
+                  className=" border-b border-richblack-800 text-richblack-600 mt-4"
                 >
-                  <Td className="flex  gap-x-4">
+                  <Td className="flex gap-x-4">
                     <div>
-                      <p className="text-lg font-semibold text-richblack-5">
+                      <p className="text-lg font-semibold text-richblack-600">
                           {category?.name}
                         </p>
                     </div>
                       
                   </Td>
-                  <Td className="text-sm font-medium text-richblack-50">
+                  <Td>
                     {category.description}
                   </Td>
-                  <Td className="text-sm font-medium text-richblack-50 ">
+                  <Td >
                     <button
                       onClick={() => {
                         navigate(`/dashboard/edit-category/${category._id}`)

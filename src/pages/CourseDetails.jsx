@@ -128,12 +128,12 @@ function CourseDetails() {
 
   return (
     <>
-      <div className={`relative w-full bg-richblack-800`}>
+      <div className={`relative w-full text-richblack-600`}>
         {/* Hero Section */}
-        <div className="mx-auto box-content px-4 lg:w-[1260px] 2xl:relative ">
-          <div className="mx-auto grid min-h-[450px] max-w-maxContentTab justify-items-center py-8 lg:mx-0 lg:justify-items-start lg:py-0 xl:max-w-[810px]">
-            <div className="relative block max-h-[30rem] lg:hidden">
-              <div className="absolute bottom-0 left-0 h-full w-full shadow-[#161D29_0px_-64px_36px_-28px_inset]"></div>
+        <div className="mx-auto mt-12 box-content px-4 lg:w-[1260px] 2xl:relative ">
+          <div className="border-2 border-yellow-100 rounded-xl mx-auto grid min-h-[450px] max-w-maxContentTab justify-items-center py-8 lg:mx-0 lg:justify-items-start lg:py-0 xl:max-w-[810px]">
+            <div className="p-12  text-center relative block max-h-[30rem] lg:hidden">
+              <div className="p-12 absolute h-full w-full shadow-[#161D29_0px_-64px_36px_-28px_inset]"></div>
               <img
                 src={thumbnail}
                 alt="course thumbnail"
@@ -141,14 +141,14 @@ function CourseDetails() {
               />
             </div>
             <div
-              className={`z-30 my-5 flex flex-col justify-center gap-4 py-5 text-lg text-richblack-5`}
+              className={`z-30 my-5 flex p-16 flex-col justify-center gap-4 py-5 text-lg text-richblack-500`}
             >
               <div>
-                <p className="text-4xl font-bold text-richblack-5 sm:text-[42px]">
+                <p className="text-4xl font-bold sm:text-[42px]">
                   {courseName}
                 </p>
               </div>
-              <p className={`text-richblack-200`}>{courseDescription}</p>
+              <p className={`text-richblack-500`}>{courseDescription}</p>
               <div className="text-md flex flex-wrap items-center gap-2">
                 <span className="text-yellow-25">{avgReviewCount}</span>
                 <RatingStars Review_Count={avgReviewCount} Star_Size={24} />
@@ -191,10 +191,10 @@ function CourseDetails() {
           </div>
         </div>
       </div>
-      <div className="mx-auto box-content px-4 text-start text-richblack-5 lg:w-[1260px]">
+      <div className="mx-auto box-content px-4 text-start text-richblack-500 lg:w-[1260px]">
         <div className="mx-auto max-w-maxContentTab lg:mx-0 xl:max-w-[810px]">
           {/* What will you learn section */}
-          <div className="my-8 border border-richblack-600 p-8">
+          <div className="my-8 border-2 rounded-lg border-yellow-100 p-8">
             <p className="text-3xl font-semibold">What you'll learn</p>
             <div className="mt-5">
               <ReactMarkdown>{whatYouWillLearn}</ReactMarkdown>
@@ -217,7 +217,7 @@ function CourseDetails() {
                 </div>
                 <div>
                   <button
-                    className="text-yellow-25"
+                    className="text-yellow-100"
                     onClick={() => setIsActive([])}
                   >
                     Collapse all sections
@@ -227,7 +227,7 @@ function CourseDetails() {
             </div>
 
             {/* Course Details Accordion */}
-            <div className="py-4">
+            <div className="py-4 text-richblack-600">
               {courseContent?.map((course, index) => (
                 <CourseAccordionBar
                   course={course}

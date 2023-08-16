@@ -23,19 +23,18 @@ export function sendOtp(email, navigate) {
         email,
         checkUserPresent: true,
       })
+      if (!response.data.success) {
+        toast.error(response.data.message)
+      }
       console.log("SENDOTP API RESPONSE............", response)
 
-      console.log(response.data.success)
-
-      if (!response.data.success) {
-        throw new Error(response.data.message)
-      }
+      // console.log(response.data.success)
 
       toast.success("OTP Sent Successfully")
       navigate("/verify-email")
     } catch (error) {
       console.log("SENDOTP API ERROR............", error)
-      toast.error("Could Not Send OTP")
+      toast.error(error.response.data.message);
     }
     dispatch(setLoading(false))
     toast.dismiss(toastId)
@@ -111,7 +110,7 @@ export function login(email, password, navigate) {
       navigate("/dashboard/my-profile")
     } catch (error) {
       console.log("LOGIN API ERROR............", error)
-      toast.error("Login Failed")
+      toast.error(error.response.data.message);
     }
     dispatch(setLoading(false))
     toast.dismiss(toastId)

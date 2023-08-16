@@ -16,12 +16,12 @@ import Footer from "../components/common/Footer"
 const About = () => {
   return (
     <div>
-      <section className="bg-richblack-700">
+      <section className="bg-white-700">
         <div className="relative mx-auto flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-center text-white">
-          <header className="mx-auto py-20 text-4xl font-semibold lg:w-[70%]">
+          <header className="mx-auto py-20 text-4xl text-yellow-100 font-semibold lg:w-[70%]">
             Driving Innovation in Online Education for a
             <HighlightText text={"Brighter Future"} />
-            <p className="mx-auto mt-3 text-center text-base font-medium text-richblack-300 lg:w-[95%]">
+            <p className="mx-auto mt-3 text-center text-base font-medium text-richblack-600 lg:w-[95%]">
               Studynotion is at the forefront of driving innovation in online
               education. We're passionate about creating a brighter future by
               offering cutting-edge courses, leveraging emerging technologies,
@@ -109,9 +109,9 @@ const About = () => {
         <ContactFormSection />
       </section>
 
-      <div className="relative mx-8 max-w-maxContent flex-col items-center justify-between gap-6 bg-richblack-900 text-white">
+      <div className="relative mx-8 max-w-maxContent flex-col items-center justify-between gap-6 text-white">
         {/* Reviws from Other Learner */}
-        <h1 className="text-center text-4xl font-semibold mt-8">
+        <h1 className="text-center text-4xl text-richblack-600 font-semibold mt-12">
           Reviews from other learners
         </h1>
         {/* <ReviewSlider /> */}

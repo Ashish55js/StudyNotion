@@ -41,7 +41,7 @@ function App() {
 
 
   return (
-   <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter">
+   <div className="w-screen min-h-screen bg-white-700 flex flex-col font-inter">
     <Navbar/>
     <Routes>
       <Route path="/" element={<Home/>} />
@@ -113,7 +113,7 @@ function App() {
       
 
       {
-        user?.accountType === ACCOUNT_TYPE.STUDENT && (
+        user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR && (
           <>
           <Route path="dashboard/cart" element={<Cart />} />
           <Route path="dashboard/enrolled-courses" element={<EnrolledCourses />} />

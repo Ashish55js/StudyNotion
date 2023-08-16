@@ -36,6 +36,11 @@ export function getUserDetails(token, navigate) {
 
 export async function getUserEnrolledCourses(token) {
   const toastId = toast.loading("Loading...")
+  if(token==null){ 
+    toast.error("Token Expired Please Login Again");
+    toast.dismiss(toastId);
+    return;
+  }
   let result = []
   try {
     console.log("BEFORE Calling BACKEND API FOR ENROLLED COURSES");

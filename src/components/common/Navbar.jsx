@@ -4,7 +4,7 @@ import { BsChevronDown } from "react-icons/bs"
 import { useSelector } from "react-redux"
 import { Link, matchPath, useLocation } from "react-router-dom"
 
-import logo from "../../assets/Logo/Logo-Full-Light.png"
+import logo from "../../assets/Logo/Logo-Full-Dark.png"
 import { NavbarLinks } from "../../data/navbar-links"
 import { apiConnector } from "../../services/apiconnector"
 import { categories } from "../../services/apis"
@@ -46,7 +46,7 @@ function Navbar() {
   return (
     <div
       className={`flex h-14 items-center justify-center border-b-[1px] border-b-richblack-700 ${
-        location.pathname !== "/" ? "bg-richblack-800" : ""
+        location.pathname !== "/" ? "text-richblack-500" : ""
       } transition-all duration-200`}
     >
       <div className="flex w-11/12 max-w-maxContent items-center justify-between">
@@ -55,8 +55,8 @@ function Navbar() {
           <img src={logo} alt="Logo" width={160} height={32} loading="lazy" />
         </Link>
         {/* Navigation links */}
-        <nav className="hidden md:block">
-          <ul className="flex gap-x-6 text-richblack-25">
+        <nav className="md:block">
+          <ul className="flex gap-x-6 text-richblack-600">
             {NavbarLinks.map((link, index) => (
               <li key={index}>
                 {link.title === "Catalog" ? (
@@ -64,8 +64,8 @@ function Navbar() {
                     <div
                       className={`group relative flex cursor-pointer items-center gap-1 ${
                         matchRoute("/catalog/:catalogName")
-                          ? "text-yellow-25"
-                          : "text-richblack-25"
+                          ? "text-yellow-100"
+                          : "text-richblack-600"
                       }`}
                     >
                       <p>{link.title}</p>
@@ -86,7 +86,7 @@ function Navbar() {
                                     .split(" ")
                                     .join("-")
                                     .toLowerCase()}`}
-                                  className="rounded-lg bg-transparent py-4 pl-4 hover:bg-richblack-50"
+                                  className="rounded-lg bg-transparent py-4 pl-4 hover:bg-richblack-500"
                                   key={i}
                                 >
                                   <p>{subLink.name}</p>
@@ -104,8 +104,8 @@ function Navbar() {
                     <p
                       className={`${
                         matchRoute(link?.path)
-                          ? "text-yellow-25"
-                          : "text-richblack-25"
+                          ? "text-yellow-100 font-bold"
+                          : "text-richblack-600"
                       }`}
                     >
                       {link.title}
@@ -118,15 +118,15 @@ function Navbar() {
         </nav>
         
         {/* {timer} */}
-        <div className="text-white text-yellow-50">
+        <div className="text-white text-yellow-100 font-bold">
           <p>{currTime}</p>
         </div>          
         
         {/* Login / Signup / Dashboard */}
-        <div className="hidden items-center gap-x-4 md:flex">
+        <div className="items-center gap-x-4 md:flex">
           {user && user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR && (
             <Link to="/dashboard/cart" className="relative">
-              <AiOutlineShoppingCart className="text-2xl text-richblack-100" />
+              <AiOutlineShoppingCart className="text-2xl text-richblack-600" />
               {totalItems > 0 && (
                 <span className="absolute -bottom-2 -right-2 grid h-5 w-5 place-items-center overflow-hidden rounded-full bg-richblack-600 text-center text-xs font-bold text-yellow-100">
                   {totalItems}
@@ -136,23 +136,23 @@ function Navbar() {
           )}
           {token === null && (
             <Link to="/login">
-              <button className="rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100">
+              <button className="rounded-[8px] border-2 hover:bg-richblack-500 hover:text-white border-richblack-500 px-[12px] py-[8px] text-richblack-600">
                 Log in
               </button>
             </Link>
           )}
           {token === null && (
             <Link to="/signup">
-              <button className="rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100">
+              <button className="rounded-[8px] border-2 hover:bg-yellow-100 border-yellow-100 px-[12px] py-[8px] text-richblack-600">
                 Sign up
               </button>
             </Link>
           )}
           {token !== null && <ProfileDropdown />}
         </div>
-        <button className="mr-4 md:hidden">
+        {/* <button className="mr-4 md:hidden"> 
           <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
-        </button>
+        </button> */}
       </div>
     </div>
   )

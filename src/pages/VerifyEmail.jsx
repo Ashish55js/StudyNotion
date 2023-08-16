@@ -47,17 +47,17 @@ function VerifyEmail() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-3.5rem)] grid place-items-center">
+    <div className="min-h-[calc(100vh-3.5rem)] grid place-items-center text-richblack-600">
       {loading ? (
         <div>
           <div className="spinner"></div>
         </div>
       ) : (
         <div className="max-w-[500px] p-4 lg:p-8">
-          <h1 className="text-richblack-5 font-semibold text-[1.875rem] leading-[2.375rem]">
+          <h1 className="text-richblack-600 font-semibold text-[1.875rem] leading-[2.375rem]">
             Verify Email
           </h1>
-          <p className="text-[1.125rem] leading-[1.625rem] my-4 text-richblack-100">
+          <p className="text-[1.125rem] leading-[1.625rem] my-4 text-richblack-500">
             A verification code has been sent to you. Enter the code below
           </p>
           <form onSubmit={handleVerifyAndSignup}>
@@ -72,7 +72,7 @@ function VerifyEmail() {
                   style={{
                     boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                   }}
-                  className="w-[48px] lg:w-[60px] border-0 bg-richblack-800 rounded-[0.5rem] text-richblack-5 aspect-square text-center focus:border-0 focus:outline-2 focus:outline-yellow-50"
+                  className="w-[48px] lg:w-[60px] border-0 border-2 border-yellow-100 rounded-[0.5rem] text-richblack-600 aspect-square text-center focus:border-0 focus:outline-2 focus:outline-yellow-100"
                 />
               )}
               containerStyle={{
@@ -89,12 +89,12 @@ function VerifyEmail() {
           </form>
           <div className="mt-6 flex items-center justify-between">
             <Link to="/signup">
-              <p className="text-richblack-5 flex items-center gap-x-2">
+              <p className="text-richblack-600 flex items-center gap-x-2">
                 <BiArrowBack /> Back To Signup
               </p>
             </Link>
             <button
-              className="flex items-center text-blue-100 gap-x-2"
+              className="flex items-center text-blue-300 gap-x-2"
               onClick={() => dispatch(sendOtp(signupData.email))}
             >
               <RxCountdownTimer />

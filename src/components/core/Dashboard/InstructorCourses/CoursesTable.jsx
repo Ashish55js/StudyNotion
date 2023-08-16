@@ -43,19 +43,19 @@ export default function CoursesTable({ courses, setCourses }) {
 
   return (
     <>
-      <Table className="rounded-xl border border-richblack-800 ">
+      <Table className="rounded-2xl border-2 text-richblack-600 font-bold border-richblack-100 ">
         <Thead>
-          <Tr className="flex gap-x-10 rounded-t-md border-b border-b-richblack-800 px-6 py-2">
-            <Th className="flex-1 text-left text-sm font-medium uppercase text-richblack-100">
+          <Tr className="flex gap-x-10 rounded-t-md border-b px-6 py-2">
+            <Th className="flex-1 text-left text-lg text-richblack-600 font-fold uppercase">
               Courses
             </Th>
-            <Th className="text-left text-sm font-medium uppercase text-richblack-100">
+            <Th className="text-left uppercase text-lg text-richblack-600 font-fold">
               Duration
             </Th>
-            <Th className="text-left text-sm font-medium uppercase text-richblack-100">
+            <Th className="text-left text-lg text-richblack-600 font-fold uppercase">
               Price
             </Th>
-            <Th className="text-left text-sm font-medium uppercase text-richblack-100">
+            <Th className="text-left font-bold uppercase text-lg text-richblack-600 font-fold">
               Actions
             </Th>
           </Tr>
@@ -63,7 +63,7 @@ export default function CoursesTable({ courses, setCourses }) {
         <Tbody>
           {courses?.length === 0 ? (
             <Tr>
-              <Td className="py-10 text-center text-2xl font-medium text-richblack-100">
+              <Td className="py-10 text-center text-2xl text-richblack-600 font-fold">
                 No courses found
                 {/* TODO: Need to change this state */}
               </Td>
@@ -80,11 +80,11 @@ export default function CoursesTable({ courses, setCourses }) {
                     alt={course?.courseName}
                     className="h-[148px] w-[220px] rounded-lg object-cover"
                   />
-                  <div className="flex flex-col justify-between">
-                    <p className="text-lg font-semibold text-richblack-5">
+                  <div className="flex flex-col justify-between text-richblack-600">
+                    <p className="text-lg font-semibold">
                       {course.courseName}
                     </p>
-                    <p className="text-xs text-richblack-300">
+                    <p className="text-xs text-richblack-600">
                       {course.courseDescription.split(" ").length >
                       TRUNCATE_LENGTH
                         ? course.courseDescription
@@ -93,7 +93,7 @@ export default function CoursesTable({ courses, setCourses }) {
                             .join(" ") + "..."
                         : course.courseDescription}
                     </p>
-                    <p className="text-[12px] text-white">
+                    <p className="text-[12px]">
                       Created: {formatDate(course.createdAt)}
                     </p>
                     {course.status === COURSE_STATUS.DRAFT ? (
@@ -111,13 +111,13 @@ export default function CoursesTable({ courses, setCourses }) {
                     )}
                   </div>
                 </Td>
-                <Td className="text-sm font-medium text-richblack-100">
+                <Td className="text-sm font-medium">
                   2hr 30min
                 </Td>
-                <Td className="text-sm font-medium text-richblack-100">
+                <Td className="text-sm font-medium">
                   ₹{course.price}
                 </Td>
-                <Td className="text-sm font-medium text-richblack-100 ">
+                <Td className="text-sm font-medium">
                   <button
                     disabled={loading}
                     onClick={() => {

@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 import HighlightText from '../components/core/HomePage/HighlightText'
 
 import CTAButton from "../components/core/HomePage/Button"
-import Banner from "../assets/Images/banner.mp4"
+import Banner from "../assets/Images/bg_video.mp4"
 import CodeBlocks from "../components/core/HomePage/CodeBlocks"
 import TimelineSection from '../components/core/HomePage/TimelineSection'
 import LearningLanguageSection from '../components/core/HomePage/LearningLanguageSection'
@@ -21,10 +21,10 @@ const Home = () => {
       text-white justify-between'>
 
         <Link to={"/signup"}>
-            <div className=' group mt-16 p-1 mx-auto rounded-full bg-richblack-800 font-bold text-richblack-200
+            <div className=' group mt-16 p-1 mx-auto rounded-full font-bold text-richblack-600
             transition-all duration-200 hover:scale-95 w-fit'>
-                <div className='flex flex-row items-center gap-2 rounded-full px-10 py-[5px]
-                transition-all duration-200 group-hover:bg-richblack-900'>
+                <div className='flex flex-row bg-white border-2 border-yellow-100 items-center gap-2 rounded-full px-10 py-[5px]
+                transition-all duration-200 group-hover:bg-yellow-100'>
                     <p>Become an Instructor</p>
                     <FaArrowRight />
                 </div>
@@ -32,12 +32,12 @@ const Home = () => {
 
         </Link>
 
-        <div className='text-center text-4xl font-semibold mt-7'>
+        <div className='text-center text-yellow-100 text-4xl font-semibold mt-7'>
             Empower Your Future with
             <HighlightText text={"Coding Skills"} />
         </div>
 
-        <div className=' mt-4 w-[90%] text-center text-lg font-bold text-richblack-300'>
+        <div className=' mt-4 w-[90%] text-center text-lg font-bold text-richblack-600'>
             With our online coding courses, you can learn at your own pace, from anywhere in the world, and get access to a wealth of resources, including hands-on projects, quizzes, and personalized feedback from instructors. 
         </div>
 
@@ -51,8 +51,8 @@ const Home = () => {
             </CTAButton>
         </div>
 
-        <div className='mx-3 my-12 shadow-blue-200'>
-            <video
+        <div className='mx-3 my-12  shadow-blue-200'>
+            <video className="rounded-xl"
             muted
             loop
             autoPlay
@@ -66,9 +66,9 @@ const Home = () => {
             <CodeBlocks 
                 position={"lg:flex-row"}
                 heading={
-                    <div className='text-4xl font-semibold'>
+                    <div className='text-4xl text-richblack-600 font-semibold'>
                         Unlock Your
-                        <HighlightText text={"coding potential"}/>
+                        <HighlightText text={"coding potential "}/>
                         with our online courses
                     </div>
                 }
@@ -91,7 +91,7 @@ const Home = () => {
                 }
 
                 codeblock={`<<!DOCTYPE html>\n<html>\nhead><title>Example</title><linkrel="stylesheet"href="styles.css">\n/head>\n`}
-                codeColor={"text-yellow-25"}
+                codeColor={"text-yellow-100"}
             />
         </div>
 
@@ -100,9 +100,9 @@ const Home = () => {
             <CodeBlocks 
                 position={"lg:flex-row-reverse"}
                 heading={
-                    <div className='text-4xl font-semibold'>
+                    <div className='text-richblack-600 text-4xl font-semibold'>
                         Unlock Your
-                        <HighlightText text={"coding potential"}/>
+                        <HighlightText text={"coding potential "}/>
                         with our online courses
                     </div>
                 }
@@ -125,7 +125,7 @@ const Home = () => {
                 }
 
                 codeblock={`<<!DOCTYPE html>\n<html>\nhead><title>Example</title><linkrel="stylesheet"href="styles.css">\n/head>\n`}
-                codeColor={"text-yellow-25"}
+                codeColor={"text-yellow-100"}
             />
         </div>
 
@@ -192,11 +192,11 @@ const Home = () => {
 
 
       {/*Section 3 */}
-      <div className='w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 first-letter bg-richblack-900 text-white'>
+      <div className='w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 first-letter text-richblack-600'>
 
             <InstructorSection />
 
-            <h2 className='text-center text-4xl font-semobold mt-10'>Review from Other Learners</h2>
+            <h2 className='text-center text-4xl font-semobold m-12'>Review from Other Learners</h2>
             {/* Review Slider here */}
             <ReviewSlider />
       </div>

@@ -85,7 +85,7 @@ exports.deleteCategory = async (req, res)=>{
     if(category.courses.length>0){
       return res.status(400).json({
         success: false,
-        message: "It has course included please delete course of this category first",
+        message: "It has course included It could not be deleted",
       });
     }
       await Category.findByIdAndDelete(categoryId);

@@ -59,16 +59,16 @@ export default function Upload({
 
   return (
     <div className="flex flex-col space-y-2">
-      <label className="text-sm text-richblack-5" htmlFor={name}>
+      <label className="text-sm text-richblack-600" htmlFor={name}>
         {label} {!viewData && <sup className="text-pink-200">*</sup>}
       </label>
       <div
         className={`${
-          isDragActive ? "bg-richblack-600" : "bg-richblack-700"
+          isDragActive ? "" : ""
         } flex min-h-[250px] cursor-pointer items-center justify-center rounded-md border-2 border-dotted border-richblack-500`}
       >
         {previewSource ? (
-          <div className="flex w-full flex-col p-6">
+          <div className="flex w-full flex-col p-6 text-richblack-600">
             {!video ? (
               <img
                 src={previewSource}

@@ -60,32 +60,32 @@ const Catalog = () => {
       return (
         <>
           {/* Hero Section */}
-          <div className=" box-content bg-richblack-800 px-4">
+          <div className="m-8 rounded-xl text-richblack-600 p-4 box-content border border-yellow-100 px font-bold">
             <div className="mx-auto flex min-h-[260px] max-w-maxContentTab flex-col justify-center gap-4 lg:max-w-maxContent ">
               <p className="text-sm text-richblack-300">
                 {`Home / Catalog / `}
-                <span className="text-yellow-25">
+                <span className="text-yellow-100">
                   {catalogPageData?.data?.selectedCategory?.name}
                 </span>
               </p>
-              <p className="text-3xl text-richblack-5">
+              <p className="text-3xl">
                 {catalogPageData?.data?.selectedCategory?.name}
               </p>
-              <p className="max-w-[870px] text-richblack-200">
+              <p className="max-w-[870px] ">
                 {catalogPageData?.data?.selectedCategory?.description}
               </p>
             </div>
           </div>
     
           {/* Section 1 */}
-          <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
-            <div className="section_heading">Courses to get you started</div>
+          <div className="mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
+            <div className="section_heading text-richblack-600">Courses to get you started</div>
             <div className="my-4 flex border-b border-b-richblack-600 text-sm">
               <p
                 className={`px-4 py-2 ${
                   active === 1
-                    ? "border-b border-b-yellow-25 text-yellow-25"
-                    : "text-richblack-50"
+                    ? "border-b font-bold border-b-yellow-100 text-yellow-100"
+                    : "text-richblack-600 font-bold"
                 } cursor-pointer`}
                 onClick={() => setActive(1)}
               >
@@ -94,8 +94,8 @@ const Catalog = () => {
               <p
                 className={`px-4 py-2 ${
                   active === 2
-                    ? "border-b border-b-yellow-25 text-yellow-25"
-                    : "text-richblack-50"
+                    ? "border-b border-b-yellow-100 text-yellow-100"
+                    : "text-richblack-600"
                 } cursor-pointer`}
                 onClick={() => setActive(2)}
               >
@@ -110,7 +110,7 @@ const Catalog = () => {
           </div>
           {/* Section 2 */}
           <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
-            <div className="section_heading">
+            <div className="section_heading text-richblack-600">
               Top courses in {catalogPageData?.data?.differentCategory?.name}
             </div>
             <div className="py-8">
@@ -122,7 +122,7 @@ const Catalog = () => {
     
           {/* Section 3 */}
           <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
-            <div className="section_heading">Frequently Bought</div>
+            <div className="section_heading text-richblack-600">Frequently Bought</div>
             <div className="py-8">
               <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
                 {catalogPageData?.data?.mostSellingCourses

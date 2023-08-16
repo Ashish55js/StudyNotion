@@ -44,7 +44,7 @@ const VideoDetailsSidebar = ({setReviewModal}) => {
 
   return (
     <>
-        <div className='text-white'>
+        <div className='text-richblack-600 font-bold'>
             {/* for buttons and headings */}
             <div>
                 {/* for buttons */}
@@ -65,24 +65,24 @@ const VideoDetailsSidebar = ({setReviewModal}) => {
 
                 </div>
                 {/* for heading or title */}
-                <div className='mx-8 flex justify-center text-xl font-bold'>
-                    <span className=''>{courseEntireData?.courseName}</span>
-                    <span className=''>&nbsp;({completedLectures?.length } / {totalNoOfLectures})</span>
-                </div>
             </div>
 
             {/* for sections and subSections */}
-            <div className='mx-8'>
+            <div className='flex flex-col float-left w-[28%]'>
+                <div className='text-xl font-bold p-4 border border-yellow-100'>
+                        <span className=''>{courseEntireData?.courseName}</span>
+                        <span className=''>&nbsp;({completedLectures?.length } / {totalNoOfLectures})</span>
+                    </div>
                 {
                     courseSectionData.map((course, index)=> (
-                        <div
+                        <div 
                         onClick={() => setActiveStatus(course?._id)}
                         key={index}
                         >
 
                             {/* section */}
 
-                            <div>
+                            <div className='font-bold p-4 border border-yellow-100'>
                                 <div>
                                     {course?.sectionName}
                                 </div>
@@ -96,7 +96,7 @@ const VideoDetailsSidebar = ({setReviewModal}) => {
                                         <div>
                                             {
                                                 course.subSection.map((topic, index) => (
-                                                    <div
+                                                    <div 
                                                     className={`flex gap-5 p-5 ${
                                                         videoBarActive === topic._id
                                                         ? "bg-yellow-200 text-richblack-900"

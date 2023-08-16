@@ -27,13 +27,13 @@ export default function EnrolledCourses() {
 
   return (
     <>
-      <div className="text-3xl text-richblack-50">Enrolled Courses</div>
+      <div className="text-3xl text-richblack-600">Enrolled Courses</div>
       {!enrolledCourses ? (
         <div className="grid min-h-[calc(100vh-3.5rem)] place-items-center">
           <div className="spinner"></div>
         </div>
       ) : !enrolledCourses.length ? (
-        <p className="grid h-[10vh] w-full place-content-center text-richblack-5">
+        <p className="grid h-[10vh] w-full place-content-center text-richblack-600">
           You have not enrolled in any course yet.
           {/* TODO: Modify this Empty State */}
         </p>
@@ -67,16 +67,16 @@ export default function EnrolledCourses() {
                   className="h-14 w-14 rounded-lg object-cover"
                 />
                 <div className="flex max-w-xs flex-col gap-2">
-                  <p className="font-semibold">{course.courseName}</p>
-                  <p className="text-xs text-richblack-300">
+                  <p className="font-bold text-richblack-600">{course.courseName}</p>
+                  <p className="text-xs text-richblack-600">
                     {course.courseDescription.length > 50
                       ? `${course.courseDescription.slice(0, 50)}...`
                       : course.courseDescription}
                   </p>
                 </div>
               </div>
-              <div className="w-1/4 px-2 py-3">{course?.totalDuration}</div>
-              <div className="flex w-1/5 flex-col gap-2 px-2 py-3">
+              <div className="w-1/4 px-2 py-3 text-richblack-600">{course?.totalDuration}</div>
+              <div className="flex w-1/5 flex-col gap-2 px-2 py-3 text-richblack-600">
                 <p>Progress: {course.progressPercentage || 0}%</p>
                 <ProgressBar
                   completed={course.progressPercentage || 0}

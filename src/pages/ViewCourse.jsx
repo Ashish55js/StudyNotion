@@ -33,7 +33,7 @@ const ViewCourse = () => {
     <>
         <div>
             <VideoDetailsSidebar setReviewModal={setReviewModal} />
-            <div>
+            <div >
                 <Outlet />
             </div>
             {reviewModal && (<CourseReviewModal setReviewModal={setReviewModal} />)}

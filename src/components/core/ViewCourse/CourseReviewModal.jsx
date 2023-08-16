@@ -39,8 +39,8 @@ const CourseReviewModal = ({setReviewModal}) => {
     }
 
   return (
-    <div>
-        <div>
+    <div className='z-auto flex relative item-center font-bold p-4 border border-yellow-100'>
+        <div className='text-center'>
             {/* Modal header */}
             <div>
                 <p>Add Review</p>
@@ -54,11 +54,11 @@ const CourseReviewModal = ({setReviewModal}) => {
             {/* Modal Body */}
             <div>
 
-                <div>
+                <div className=''>
                     <img 
                         src={user?.image}
                         alt='user Image'
-                        className='aspect-square  w-[50px] rounded-full object-cover'
+                        className='m-auto aspect-square w-[50px] rounded-full '
                     />
                     <div>
                         <p>{user?.firstName} {user?.lastName}</p>
