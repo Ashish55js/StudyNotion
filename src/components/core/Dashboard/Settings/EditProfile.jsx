@@ -109,7 +109,6 @@ export default function EditProfile() {
                 Gender
               </label>
               <select
-                type="text"
                 name="gender"
                 id="gender"
                 className="form-style bg-white border border-yellow-100 text-richblack-600"
@@ -126,7 +125,7 @@ export default function EditProfile() {
               </select>
               {errors.gender && (
                 <span className="-mt-1 text-[12px] text-yellow-100">
-                  Please enter your Date of Birth.
+                  Please enter your Gender.
                 </span>
               )}
             </div>
