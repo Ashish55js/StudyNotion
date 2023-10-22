@@ -49,7 +49,7 @@ exports.createRating = async (req, res) => {
                                         }
                                     },
                                     {new: true});
-        console.log(updatedCourseDetails);
+        // console.log(updatedCourseDetails);
         //return response
         return res.status(200).json({
             success:true,
