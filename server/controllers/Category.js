@@ -16,7 +16,7 @@ exports.createCategory = async (req, res) => {
 			name: categoryName,
 			description: categoryDescription,
 		});
-		console.log(CategorysDetails);
+		// console.log(CategorysDetails);
 		return res.status(200).json({
 			success: true,
 			message: "Categorys Created Successfully",
@@ -39,7 +39,7 @@ exports.fetchCategoryById = async (req, res) => {
     if (!singleCategory) {
       return res.status(404).json({ error: "single category not found" })
     }
-    console.log("one category fetched "+singleCategory);
+    // console.log("one category fetched "+singleCategory);
 		return res.status(200).json({
 			success: true,
 			data: singleCategory,
@@ -55,7 +55,7 @@ exports.fetchCategoryById = async (req, res) => {
 
 exports.showAllCategories = async (req, res) => {
 	try {
-    console.log("INSIDE SHOW ALL CATEGORIES");
+    // console.log("INSIDE SHOW ALL CATEGORIES");
 		const allCategories = await Category.find({});
     // console.log("allcategories are "+allCategories);
 		res.status(200).json({
@@ -74,7 +74,7 @@ exports.showAllCategories = async (req, res) => {
 exports.deleteCategory = async (req, res)=>{
   try {
     const { categoryId } = req.body
-    console.log("category id "+categoryId);
+    // console.log("category id "+categoryId);
     // Find the category by id
     const category = await Category.findById(categoryId)
     if (!category) {
@@ -109,7 +109,7 @@ exports.updateCategory = async (req, res) => {
 		// Find the category by id
     // console.log("category Id "+categoryId);
 		const categoryDetails = await Category.findById(categoryId);
-    console.log("categoryDetails "+categoryDetails);
+    // console.log("categoryDetails "+categoryDetails);
 		// Update the category fields
 		categoryDetails.name = categoryName;
 		categoryDetails.description = categoryDescription;
@@ -137,7 +137,7 @@ exports.categoryPageDetails = async (req, res) => {
     try {
       const { categoryId } = req.body
       // console.log(req);
-      console.log("PRINTING CATEGORY ID: ", categoryId);
+      // console.log("PRINTING CATEGORY ID: ", categoryId);
       // Get courses for the specified category
       const selectedCategory = await Category.findById(categoryId)
         .populate({
@@ -150,7 +150,7 @@ exports.categoryPageDetails = async (req, res) => {
       //console.log("SELECTED COURSE", selectedCategory)
       // Handle the case when the category is not found
       if (!selectedCategory) {
-        console.log("Category not found.")
+        // console.log("Category not found.")
         return res
           .status(404)
           .json({ success: false, message: "Category not found" })
