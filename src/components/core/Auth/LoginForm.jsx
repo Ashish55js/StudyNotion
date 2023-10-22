@@ -59,7 +59,7 @@ function LoginForm() {
           required
           type={showPassword ? "text" : "password"}
           name="password"
-          autocomplete="on"
+          autoComplete="on"
           value={password}
           onChange={handleOnChange}
           placeholder="Enter Password"
