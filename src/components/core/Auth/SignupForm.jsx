@@ -148,7 +148,7 @@ function SignupForm() {
             <input
               required
               type={showPassword ? "text" : "password"}
-              autocomplete="off"
+              autoComplete="off"
               name="password"
               value={password}
               onChange={handleOnChange}
@@ -177,7 +177,7 @@ function SignupForm() {
               required
               type={showConfirmPassword ? "text" : "password"}
               name="confirmPassword"
-              autocomplete="off"
+              autoComplete="off"
               value={confirmPassword}
               onChange={handleOnChange}
               placeholder="Confirm Password"
