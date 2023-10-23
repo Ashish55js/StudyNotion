@@ -43,6 +43,7 @@ export default function UpdatePassword() {
                 type={showOldPassword ? "text" : "password"}
                 name="oldPassword"
                 id="oldPassword"
+                autoComplete="on"
                 placeholder="Enter Current Password"
                 className="form-style bg-white border border-yellow-100 text-richblack-600"
                 {...register("oldPassword", { required: true })}
@@ -70,6 +71,7 @@ export default function UpdatePassword() {
               <input
                 type={showNewPassword ? "text" : "password"}
                 name="newPassword"
+                autoComplete="on"
                 id="newPassword"
                 placeholder="Enter New Password"
                 className="form-style  bg-white border border-yellow-100 text-richblack-600"
