@@ -26,7 +26,7 @@ exports.updateProfile = async (req, res) => {
 		return res.json({
 			success: true,
 			message: "Profile updated successfully",
-			profile,
+			userDetails,
 		});
 	} catch (error) {
 		console.log(error);
