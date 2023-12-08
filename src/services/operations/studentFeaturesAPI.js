@@ -66,12 +66,12 @@ export async function buyCourse(token, courses, userDetails, navigate, dispatch)
                 verifyPayment({...response, courses}, token, navigate, dispatch);
             }
         }
-        const paymentObject = new window.Razorpay(options);
+        const paymentObject = new window.Razorpay(options);        
+        paymentObject.on("payment.failed", function(response) {
+            toast.error("oops, payment failed");
+            console.log(response.error);
+        })
         paymentObject.open();
-        // paymentObject.on("payment.failed", function(response) {
-        //     toast.error("oops, payment failed");
-        //     console.log(response.error);
-        // })
 
     }
     catch(error) {
